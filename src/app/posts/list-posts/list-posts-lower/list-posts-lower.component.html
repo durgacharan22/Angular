@@ -1,0 +1,20 @@
+<div *ngFor="let post of postss">
+  <div class="list-group-item" *ngIf="post._id == post_id">
+    <h3>Title: </h3>
+    <p>{{post.title}}</p>
+    <h3>Description: </h3>
+    <p>{{post.description}}</p>
+    <button class="btn btn-primary" (click)="like(post._id)">Like</button>
+    <button class="btn btn-primary" (click)="deletePost(post._id)">Delete</button><br /><br />
+
+    <h3>Comments:</h3>
+    <ul *ngFor='let comment of comments' class="list-group">
+      <li *ngIf='comment.postId == post._id' class=" list-group-item">{{comment.comment}}</li>
+    </ul>
+
+    <div id=post._id>
+      <input type='text' class="jumbotron" [(ngModel)]='addComment'><br />
+      <button class="btn btn-primary" (click)="comment(post._id)">Add Comment</button>
+    </div>
+  </div>
+</div><br />

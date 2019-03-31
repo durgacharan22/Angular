@@ -1,0 +1,20 @@
+<!-- <div class='container'>
+  <ul *ngFor='let post of posts' class="list-group">
+
+    <li class=" list-group-item">
+      [routerLink]="['/post/:post._id']" routerLinkActive="router-link-active"
+      <a [routerLink]="['/posts',post._id]">{{post.title}}</a>
+
+    </li>
+  </ul>
+</div> -->
+
+<ul class="container" *ngFor='let post of posts'>
+  <div class="list-group-item" (click)="onSelect(post)">
+    <h3>{{post.title}}</h3>
+    <h3>{{post.description}}</h3>
+  </div><br />
+</ul>
+<app-list-posts-lower (addCommentEvent)="addComment" (commentEvent)="comment($event)" (likeEvent)="like($event)"
+  (deleteEvent)="deletePost($event)">
+</app-list-posts-lower>

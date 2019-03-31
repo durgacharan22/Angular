@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Create Post</h1>
+  <form [formGroup]="postsForm" (ngSubmit)="onSubmit(postsForm)">
+    <input type="text" formControlName="title" class="form-control" placeholder="Post Title"><br />
+    <input type="text" formControlName="description" class="form-control" placeholder="Post Description"><br />
+    <button type="submit" class="btn btn-primary">Create Post!!</button>
+  </form>
+</div>
